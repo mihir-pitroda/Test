@@ -14,6 +14,13 @@
 		<name>Bot</name>
 	</types>
 	<types>
+		<members>Appointment__c</members>
+		<members>HCP_Profile__c</members>
+		<members>MCP_Server_Config__c</members>
+		<members>Patient__c</members>
+		<name>CustomObject</name>
+	</types>
+	<types>
 		<members>CallAgentBasedonUserQuery</members>
 		<members>RetrievePatientDetailsForCarePlan</members>
 		<members>RouteToServiceAgent</members>

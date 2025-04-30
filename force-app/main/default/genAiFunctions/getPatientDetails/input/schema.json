@@ -1,0 +1,28 @@
+{
+  "required" : [ "patientEmail", "patientName", "patientPhone" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "patientEmail" : {
+      "title" : "patientEmail",
+      "description" : "Collect patient email",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "patientName" : {
+      "title" : "patientName",
+      "description" : "Collect patient name",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "patientPhone" : {
+      "title" : "patientPhone",
+      "description" : "Collect patient phone",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

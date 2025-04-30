@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is a custom template that has been made to override the standard behavior.</description>
+    <invocationTarget>Knowledge_Answers_Custom</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <masterLabel>Knowledge Answers Custom</masterLabel>
+    <progressIndicatorMessage>Generating response based on the user query and retrieving data from the corresponding RAG</progressIndicatorMessage>
+</GenAiFunction>

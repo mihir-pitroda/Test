@@ -1,0 +1,21 @@
+{
+  "required" : [ "doctorDepartment", "doctorLocation" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "doctorDepartment" : {
+      "title" : "doctorDepartment",
+      "description" : "Collect doctor department",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "doctorLocation" : {
+      "title" : "doctorLocation",
+      "description" : "Collect doctor location",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

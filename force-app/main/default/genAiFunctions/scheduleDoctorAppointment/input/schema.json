@@ -1,0 +1,28 @@
+{
+  "required" : [ "appointmentDate", "doctorName", "patientName" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "appointmentDate" : {
+      "title" : "appointmentDate",
+      "description" : "Collect appointment Date",
+      "lightning:type" : "lightning__dateTimeStringType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "doctorName" : {
+      "title" : "doctorName",
+      "description" : "Collect doctor name",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "patientName" : {
+      "title" : "patientName",
+      "description" : "Collect patient name",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

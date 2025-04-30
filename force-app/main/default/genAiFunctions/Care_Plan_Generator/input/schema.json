@@ -1,0 +1,31 @@
+{
+  "required" : [ "Input:Query", "Input:PatientDetails" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Input:Query" : {
+      "title" : "Query",
+      "description" : "Pass the users question as is to the prompt template.\n",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "Input:PatientDetails" : {
+      "title" : "PatientDetails",
+      "description" : "Id of patient from Patient__c object\n",
+      "lightning:type" : "lightning__recordInfoType",
+      "lightning:sObjectInfo" : {
+        "apiName" : "Patient__c"
+      },
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : true
+    },
+    "citationMode" : {
+      "title" : "Citation Mode",
+      "description" : "Select Citation Mode",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

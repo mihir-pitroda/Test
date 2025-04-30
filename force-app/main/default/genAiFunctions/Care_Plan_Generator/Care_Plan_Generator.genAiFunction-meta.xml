@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This action is used to generate a care plan for a patient</description>
+    <invocationTarget>Care_Plan_Generator</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <masterLabel>Care Plan Generator</masterLabel>
+    <progressIndicatorMessage>Generating Care Plan</progressIndicatorMessage>
+</GenAiFunction>

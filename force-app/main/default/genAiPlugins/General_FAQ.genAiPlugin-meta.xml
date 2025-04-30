@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canEscalate>false</canEscalate>
+    <description>This topic is for helping answer customer&apos;s questions by searching through the knowledge articles and providing information from those articles. The questions can be about the company and its products, policies or business procedures</description>
+    <developerName>General_FAQ</developerName>
+    <genAiFunctions>
+        <functionName>Knowledge_Answers_Custom</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>After formatting the response, verify that all source Knowledge Article IDs are correctly converted into HTML hyperlinks. If any hyperlinks are missing or incorrect, reformat the output to include the proper links before presenting it to the user.</description>
+        <developerName>instruction_afterforma0</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_afterforma0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If the customer&apos;s question is too vague or general, ask for more details and clarification to give a better answer.</description>
+        <developerName>instruction_ifthecusto1</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ifthecusto1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If you are unable to help the customer even after asking clarifying questions, ask if they want to escalate this issue to a live agent.</description>
+        <developerName>instruction_ifyouareun2</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ifyouareun2</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If you are unable to answer customer&apos;s questions, ask if they want to escalate this issue to a live agent.</description>
+        <developerName>instruction_ifyouareun3</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ifyouareun3</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Include sources in your response when available from the knowledge articles, otherwise proceed without them.</description>
+        <developerName>instruction_includesou4</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_includesou4</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Never provide generic information, advice or troubleshooting steps, unless retrieved from searching knowledge articles.</description>
+        <developerName>instruction_neverprovi5</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_neverprovi5</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>General FAQ</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to interact and answer questions for the user about anything using the retriever Id 1CxgL0000001pGbSAI along with the standard prompt template einstein_gpt__answerWithKnowledge</scope>
+</GenAiPlugin>

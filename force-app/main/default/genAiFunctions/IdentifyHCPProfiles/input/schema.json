@@ -1,0 +1,31 @@
+{
+  "required" : [ "Input:userQuery", "Input:HCPProfiles" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Input:userQuery" : {
+      "title" : "userQuery",
+      "description" : "User query , Input type is Text",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "Input:HCPProfiles" : {
+      "title" : "HCPProfiles",
+      "description" : "This will be collection of record_ids , recordIds , Input type is Text",
+      "lightning:type" : "lightning__recordInfoType",
+      "lightning:sObjectInfo" : {
+        "apiName" : "HCP_Profile__c"
+      },
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "citationMode" : {
+      "title" : "Citation Mode",
+      "description" : "Select Citation Mode",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

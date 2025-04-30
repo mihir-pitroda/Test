@@ -1,0 +1,14 @@
+{
+  "required" : [ "userLocation" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "userLocation" : {
+      "title" : "userLocation",
+      "description" : " Ask for user location , this is text",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

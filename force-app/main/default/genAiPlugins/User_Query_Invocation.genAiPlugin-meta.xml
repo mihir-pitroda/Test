@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canEscalate>false</canEscalate>
+    <description>This topic handles the invocation of different agents based on the user&apos;s query. It ensures that the appropriate agent is engaged depending on the nature of the user&apos;s request. Normally any question related to appointment scheduling or HCP care plan generation related  or knowledge based related questions like how to do , why this is happening , asking anything about vaccine or disease related questions should invoke this topic</description>
+    <developerName>User_Query_Invocation</developerName>
+    <genAiFunctions>
+        <functionName>CallAgentBasedonUserQuery</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If the user&apos;s query pertains to knowledge management or scheduling related like appointment scheduling  or request for HCP care plan generation .</description>
+        <developerName>instruction_iftheusers0</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_iftheusers0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Please use the action CallAgentBasedonUserQuery and pass the user input to the action to receive agent response.</description>
+        <developerName>instruction_pleaseuset1</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_pleaseuset1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>If user is asking for Appointment scheduling and he has provided HCP details already in the previous step , please consider HCP details along with the other scheduling details while trying to schedule the appointment .</description>
+        <developerName>instruction_ifuserisas2</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ifuserisas2</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>User Query Invocation</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to determine the nature of the user&apos;s query and invoke the relevant agent to handle the specific request. You should not attempt to resolve the query yourself but rather facilitate the connection to the appropriate agent.</scope>
+</GenAiPlugin>

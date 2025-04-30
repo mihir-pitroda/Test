@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This will return the list of HCP Ids based on the location.</description>
+    <invocationTarget>getHCPIdsBasedOnLocation</invocationTarget>
+    <invocationTargetType>flow</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <masterLabel>getHCPIdsBasedOnLocation</masterLabel>
+    <progressIndicatorMessage>This will get the list of HCP Ids based on a particular location</progressIndicatorMessage>
+</GenAiFunction>

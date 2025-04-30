@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>OXZLCK7II5lm54OLKsB6/bMbGTMXu7kVuDxKq6c7K4g=_1</activeVersionIdentifier>
+    <description>This is a template which decides which agent to call.</description>
+    <developerName>MCP_Server_Template</developerName>
+    <masterLabel>MCP Server Template</masterLabel>
+    <templateVersions>
+        <content>You are an agent analyzer . Your job is to decide the agent name based on the context. The main purpose is to come up with the right agent capable of doing the activity or search or other activities as requested by the user as &quot;{!$Input:MCP_Context}&quot;.
+
+Consider the agent {!$Input:MCP_Server_Config.MCP_Agent_API_Name__c} has the skill set as &quot;{!$Input:MCP_Server_Config.Agent_SkillSet__c}&quot; , now take {!$Input:MCP_Context} into consideration
+and decide whether agent will be capable of handling the request given by the user.
+
+Your strictly give the response in the below JSON format . If you do not think the agent does not have the skill set to take care of the request given in &quot;{!$Input:MCP_Context}&quot;
+please provide response as none. Instruction to generate the response 
+
+&quot;&quot;&quot; 
+{
+ &quot;Agent Name&quot; : &quot;give the agent name from {!$Input:MCP_Server_Config.MCP_Agent_Name__c}&quot;,
+ &quot;Agent API Name&quot;: &quot;give the agent API name from {!$Input:MCP_Server_Config.MCP_Agent_API_Name__c}&quot;,
+ &quot;MCP Context&quot; :&quot;{!$Input:MCP_Context}&quot;
+}
+--Response sample
+For example , response should always be in the below format. Strictly follow the below format.
+{ &quot;Agent Name&quot;: &quot;{!$Input:MCP_Server_Config.MCP_Agent_Name__c}&quot;, &quot;Agent API Name&quot;: &quot;{!$Input:MCP_Server_Config.MCP_Agent_API_Name__c}&quot;, &quot;MCP Context&quot;: &quot;{!$Input:MCP_Context}&quot;}
+in case you don&apos;t find any agent , your response example will be as below.
+{ &quot;Agent Name&quot;: &quot;none&quot;, &quot;Agent API Name&quot;: &quot;none&quot;, &quot;MCP Context&quot;: &quot;{!$Input:MCP_Context}&quot;}
+
+&apos;&apos;&apos;&apos;&apos; 
+</content>
+        <inputs>
+            <apiName>MCP_Context</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>MCP Context</masterLabel>
+            <referenceName>Input:MCP_Context</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>MCP_Server_Config</apiName>
+            <definition>SOBJECT://MCP_Server_Config__c</definition>
+            <masterLabel>MCP Server Config</masterLabel>
+            <referenceName>Input:MCP_Server_Config</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4Turbo</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>OXZLCK7II5lm54OLKsB6/bMbGTMXu7kVuDxKq6c7K4g=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

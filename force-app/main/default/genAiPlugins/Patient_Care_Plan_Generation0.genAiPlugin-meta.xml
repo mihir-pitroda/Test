@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>This topic handles the generation of care plans for patients based on their specific needs and conditions.</description>
+    <developerName>Patient_Care_Plan_Generation0</developerName>
+    <genAiFunctions>
+        <functionName>Care_Plan_Generator</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>RetrievePatientDetailsForCarePlan</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>Ask clarifying questions to ensure all necessary information is collected.</description>
+        <developerName>instruction_askclarify0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_askclarify0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Call the action RetrievePatientDetailsForCarePlan() to get the record id of the patient and then call Care_Plan_Generator()</description>
+        <developerName>instruction_calltheact1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_calltheact1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Confirm the generated care plan with the patient and make necessary adjustments based on their feedback.</description>
+        <developerName>instruction_confirmthe2</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_confirmthe2</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Gather detailed patient information, including medical history, current conditions, and treatment preferences.</description>
+        <developerName>instruction_gatherdeta3</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_gatherdeta3</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Never ask user for an Id, get the patient record by using data retrieval functions available at your disposal.</description>
+        <developerName>instruction_neveraskus4</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_neveraskus4</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Offer options for different treatment plans based on patient preferences and medical guidelines.</description>
+        <developerName>instruction_offeroptio5</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_offeroptio5</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Pass the user input as is for the prompt template</description>
+        <developerName>instruction_passtheuse6</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_passtheuse6</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Utilize available medical records and tools to create a tailored care plan.</description>
+        <developerName>instruction_utilizeava7</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_utilizeava7</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Patient Care Plan Generation</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is only to generate comprehensive care plans for patients by gathering necessary information and utilizing relevant tools.</scope>
+</GenAiPlugin>

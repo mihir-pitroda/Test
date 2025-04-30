@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is a flex prompt template , it will identify the right doctors based on the symptoms or patient query</description>
+    <invocationTarget>IdentifyHCPProfiles</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <masterLabel>IdentifyHCPProfiles</masterLabel>
+    <progressIndicatorMessage>This is a flex prompt template , it will identify the right doctors based on the symptoms or patient query</progressIndicatorMessage>
+</GenAiFunction>

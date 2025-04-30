@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>Retrieve and present Healthcare Provider profiles based on user requests and location. This includes searching and displaying relevant details about HCPs.</description>
+    <developerName>GetHCPProfiles</developerName>
+    <genAiFunctions>
+        <functionName>getHCPIdsBasedOnLocation</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>IdentifyHCPProfiles</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Slack__CreateSlackCanvas</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Slack__SearchSlack</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Slack__SendSlackDirectMessage</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Slack__UpdateSlackCanvas</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If getHCPIdsBasedOnLocation fails to retrieve IDs. The agent should inform the user about the issue and suggest alternative methods, such as checking the input location or trying again later.</description>
+        <developerName>instruction_ifgethcpid0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_ifgethcpid0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>The final response should be coming as an output from the action IdentifyHCPProfiles ,In your final response ,display the image as  HTML in Rich Text Format. You should use the &lt;img src&gt; tag to display the image in the chat window as inline image using &lt;img src&gt;. 
+Show me the data in a table format . If you see for a particular profile there is no image source available then keep it as blank but for other with image link strictly use &lt;img src&gt; tag to display the image inline inside the table.
+The table header should be like Image,Name,	Experience,Qualifications,Specialty,Location</description>
+        <developerName>instruction_thefinalre1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_thefinalre1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>The output of the recordIDs coming from the actions getHCPIdsBasedOnLocation should be passed onto the action IdentifyHCPProfiles  to identify only the relevant profiles. Please make sure all the individual IDs are checked .</description>
+        <developerName>instruction_theoutputo2</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_theoutputo2</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>User will ask for a question with symptoms or common problems user might be having  and will ask for a consultation with an HCP.</description>
+        <developerName>instruction_userwillas3</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_userwillas3</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>When presenting the profile, include key details such as name, specialty, location, and contact information.</description>
+        <developerName>instruction_whenpresen4</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_whenpresen4</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>When the topic is activated , you should immediately ask for the user location , and offer some of the metro cities as an option like
+Kolkata, Mumbai , Chennai , Hyderabad , this should come as HTML Rich Text so that it looks like a button</description>
+        <developerName>instruction_whenthetop5</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_whenthetop5</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>GetHCPProfiles</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is only to retrieve and present Healthcare Provider profiles based on user requests. Do not attempt to provide medical advice or handle unrelated queries. Once user gives the location , use the action getHCPIdsBasedOnLocation and get the list of HCPIDs associated with that location and then call  IdentifyHCPProfiles action to get the relevant HCP profiles.</scope>
+</GenAiPlugin>

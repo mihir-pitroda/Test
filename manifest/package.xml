@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>MCPServerConfigParse</members>
+		<members>MCPServerInvokeAgent</members>
+		<members>MCP_ServerControllerApex</members>
+		<name>ApexClass</name>
+	</types>
+	<types>
+		<members>Copilot_for_Salesforce</members>
+		<members>Doctor_Reservation_Management_System</members>
+		<members>Patient_Knowledge_Assistant</members>
+		<members>Patient_Support_Digital_Assistant</members>
+		<name>Bot</name>
+	</types>
+	<types>
+		<members>CallAgentBasedonUserQuery</members>
+		<members>RetrievePatientDetailsForCarePlan</members>
+		<members>RouteToServiceAgent</members>
+		<members>getHCPDetails</members>
+		<members>getHCPIdsBasedOnLocation</members>
+		<members>getPatientDetails</members>
+		<members>scheduleAppointment</members>
+		<members>scheduleDoctorAppointment</members>
+		<name>Flow</name>
+	</types>
+	<types>
+		<members>CallAgentBasedonUserQuery</members>
+		<members>Care_Plan_Generator</members>
+		<members>IdentifyHCPProfiles</members>
+		<members>Knowledge_Answers_Custom</members>
+		<members>RetrievePatientDetailsForCarePlan</members>
+		<members>getHCPDetails</members>
+		<members>getHCPIdsBasedOnLocation</members>
+		<members>getPatientDetails</members>
+		<members>scheduleDoctorAppointment</members>
+		<name>GenAiFunction</name>
+	</types>
+	<types>
+		<members>Doctor_Reservation_Management_System</members>
+		<members>EmployeeCopilotPlanner</members>
+		<members>Patient_Knowledge_Assistant</members>
+		<members>Patient_Support_Digital_Assistant</members>
+		<name>GenAiPlanner</name>
+	</types>
+	<types>
+		<members>General_FAQ</members>
+		<members>GetHCPProfiles</members>
+		<members>Help_patient_creating_a_Doctor_Appointment</members>
+		<members>Patient_Care_Plan_Generation0</members>
+		<members>User_Query_Invocation</members>
+		<name>GenAiPlugin</name>
+	</types>
+	<types>
+		<members>Care_Plan_Generator</members>
+		<members>IdentifyHCPProfiles</members>
+		<members>Knowledge_Answers_Custom</members>
+		<members>MCP_Server_Template</members>
+		<name>GenAiPromptTemplate</name>
+	</types>
+	<types>
+		<members>Appointment__c-Appointment Layout</members>
+		<members>HCP_Profile__c-HCP Profile Layout</members>
+		<members>MCP_Server_Config__c-MCP Server Config Layout</members>
+		<members>Patient__c-Patient Layout</members>
+		<name>Layout</name>
+	</types>
+	<version>63.0</version>
+</Package>

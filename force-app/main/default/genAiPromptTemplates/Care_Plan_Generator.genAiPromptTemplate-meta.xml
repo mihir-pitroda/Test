@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>OXZLCK7II5lm54OLKsB6/bMbGTMXu7kVuDxKq6c7K4g=_1</activeVersionIdentifier>
+    <developerName>Care_Plan_Generator</developerName>
+    <masterLabel>Care Plan Generator</masterLabel>
+    <templateVersions>
+        <content>You are a doctors assistant who is responsible for generating a care plan based on inputs provided
+### 
+INPUT PATIENT DETAILS:
+PATIENT_CONTEXT: {!$RecordSnapshot:PatientDetails.Snapshot}
+
+###
+Input_Doctor_Query: {!$Input:Query}
+
+###
+INSTRUCTIONS
+1. Analyse the Doctors Query with specific health concern or question
+  a.Read the user’s question or issue from QUESTION carefully and determine how it shall be answered by
+  b. Comparing it with the provided knowledge base content.
+  c.Comparing it with specific details within the patient record context from provided patient details
+  d. Re-read the user’s query to ensure proper understanding before generating a response.
+
+2. Rules and Samples for generating care plan -
+ Use the knowledge provided to search for instructions on how to generate a care plan using the CAREPLANGENERATOR_HELPDOCS retriever 
+ Search the provided CAREPLANGENERATOR_HELPDOCS for relevant content related to the user query.
+ Understand the instructions and context using the specific details and requests by the doctor in Input_Doctor_Query.
+
+
+
+3. Disease details 
+Use the DISEASE_DICTIONARY under KNOWLEDGE to search for diseases and look for similarities in the disease documents with matching patient details from the PATIENT_CONTEXT
+ a. Search the provided KNOWLEDGE for relevant content related to the user query.
+ b. Match the details in the patient details with the knowledge content to identify applicable rules, steps, or information
+ c. Ensure at least one or two fields from the record context are used to validate the answer against the knowledge base.
+
+4. Generate a Care Plan:  
+ a. For Context-Relevant Responses:
+ b. Ensure the Patient name {!$Input:PatientDetails.Name} or identifier is included in the response.
+ c. Match the knowledge content from KNOWLEDGE with field values from PATIENT_CONTEXT and explain their relevance to the query.
+ d. Provide specific reasoning supported by record details from PATIENT_CONTEXT to ensure the response is tailored to the context.
+ e. Provide a general answer based on the available knowledge in KNOWLEDGE.
+ f. Include a polite disclaimer if the query cannot be addressed (e.g., &quot;Sorry, I can’t find an answer based on the available articles.&quot;).
+ g. Avoid generating responses solely from record fields (PATIENT_CONTEXT ) without referencing knowledge content.
+ h. Always generate responses by comparing the knowledge content with the Patient fields, and NEVER construct a response solely based on the Patient fields alone .
+ i. Should consider the following points while drafting the care plan:
+ -Assessment:
+ -Summarize patient&apos;s current health status based on provided details.
+ -Identify potential health risks or concerns.
+ -Diagnosis:
+ -Provide a preliminary diagnosis based on symptoms and medical history.
+ -Suggest further diagnostic tests if necessary.
+ -Treatment Plan:
+ -Recommend appropriate medications or therapies.
+ -Outline lifestyle modifications (e.g., diet, exercise).
+ -Schedule follow-up appointments or check-ups.
+ -Preventive Measures:
+ -Advise on preventive care (e.g., vaccinations, screenings).
+ -Provide tips for maintaining overall health and well-being.
+ -Review and Adjust:
+ -Ensure the plan is tailored to the patient&apos;s specific needs.
+ -Adjust recommendations based on patient preferences and doctor&apos;s expertise.
+
+###
+KNOWLEDGE : 
+CAREPLANGENERATOR_HELPDOCS - {!$EinsteinSearch:File_Health_Care_Generator_help_docs_1Cx_5wteb160b20.results}
+DISEASE_DICTIONARY - {!$EinsteinSearch:File_Health_Care_Plan_Disease_docs_1Cx_5wtfe51fd61.results}
+
+
+</content>
+        <inputs>
+            <apiName>PatientDetails</apiName>
+            <definition>SOBJECT://Patient__c</definition>
+            <masterLabel>PatientDetails</masterLabel>
+            <referenceName>Input:PatientDetails</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Query</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Query</masterLabel>
+            <referenceName>Input:Query</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/File_Health_Care_Generator_help_docs_1Cx_5wteb160b20</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:Query}</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:File_Health_Care_Generator_help_docs_1Cx_5wteb160b20</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/File_Health_Care_Plan_Disease_docs_1Cx_5wtfe51fd61</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:Query} Allergies- {!$Input:PatientDetails.Allergies__c} Symptoms-{!$Input:PatientDetails.Symptoms__c}lifestyle-{!$Input:PatientDetails.Lifestyle_factors__c}</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:File_Health_Care_Plan_Disease_docs_1Cx_5wtfe51fd61</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>invocable://getDataForGrounding</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>recordId</parameterName>
+                <valueExpression>{!$Input:PatientDetails.Id}</valueExpression>
+            </parameters>
+            <referenceName>RecordSnapshot:PatientDetails</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>OXZLCK7II5lm54OLKsB6/bMbGTMXu7kVuDxKq6c7K4g=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>
